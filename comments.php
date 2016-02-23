@@ -68,8 +68,8 @@ if ( post_password_required() ) {
 	*/
 	$milky_way_args = array( 
  	        // redefine your own textarea (the comment body) 
- 	        'comment_field' => '<p class="comment-form-comment"><label for="comment" id="comment-label">' . _x( 'Comment', 'noun', 'milky-way' ) . ' <span class="required">('.__( 'required', 'milky-way' ).')</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required aria-labelledby="comment-label, html-tags"></textarea></p>', 
-			'comment_notes_after' => '<p class="form-allowed-tags" id="html-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'milky-way' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
+ 	        'comment_field' => '<p class="comment-form-comment"><label for="comment" id="comment-label">' . _x( 'Comment', 'noun', 'milky-way' ) . ' <span class="required">('.__( 'required', 'milky-way' ).')</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required aria-labelledby="comment-label"></textarea></p>', 
+			'comment_notes_after' => '',
 			'comment_notes_before' => '<p class="comment-notes" id="comment-notes">' . __( 'Your email address will not be published.', 'milky-way' ).'</p>'
  	    );
 	comment_form( $milky_way_args ); ?>

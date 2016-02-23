@@ -51,25 +51,29 @@
 				?>
 				<div class="text-header<?php echo $class; ?>">
 					<div class='contents'>
-						<div class='inner-contents'>
-						<?php echo $logo_img; ?>
-						<?php 
-						/**
-						 * If somebody sets their blog name to an empty string, their intent is probably to hide the site title on the home page.
-						 * This results in an empty link with no text, so this pattern inserts text and hides the link.
-						 */
-						if ( get_bloginfo( 'name' ) == '' ) {
-							$class = 'site-title screen-reader-text';
-							$name = __( 'Home', 'milky-way' );
-						} else {
-							$class = 'site-title';
-							$name = get_bloginfo( 'name' );
-						}
-						?>
-						<div class='<?php echo $class; ?>'><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo $name; ?></a></div>
-						<?php if ( get_bloginfo( 'description' ) != '' ) { ?>
-							<div class='site-description'><?php bloginfo('description'); ?></div>
-						<?php } ?>
+						<div class="outer">
+							<div class='inner-contents'>
+							<?php echo $logo_img; ?>
+							<?php 
+							/**
+							 * If somebody sets their blog name to an empty string, their intent is probably to hide the site title on the home page.
+							 * This results in an empty link with no text, so this pattern inserts text and hides the link.
+							 */
+							if ( get_bloginfo( 'name' ) == '' ) {
+								$class = 'site-title screen-reader-text';
+								$name = __( 'Home', 'milky-way' );
+							} else {
+								$class = 'site-title';
+								$name = get_bloginfo( 'name' );
+							}
+							?>
+							<div class='heading-contents'>
+								<div class='<?php echo $class; ?>'><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo $name; ?></a></div>
+								<?php if ( get_bloginfo( 'description' ) != '' ) { ?>
+									<div class='site-description'><?php bloginfo('description'); ?></div>
+								<?php } ?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -85,7 +89,7 @@
 				 */
 			?>
 			<nav role="navigation" aria-label='<?php _e( 'Primary Menu ', 'milky-way' ); ?>'>
-				<button class='menu-toggle' title='<?php _e( 'Toggle Menu', 'milky-way' ); ?>' aria-controls='menu-primary-id' aria-expanded='false'><span class="maybe-hide"><?php _e( 'Toggle Menu','milky-way' ); ?></span></button>			
+				<button class='menu-toggle' aria-controls='menu-primary-id' aria-expanded='false'><span><?php _e( 'Toggle Menu','milky-way' ); ?></span></button>			
 				<?php wp_nav_menu( array( 'theme_location'=>'primary', 'menu_id'=>'menu-primary-id' ) ); ?>
 			</nav>
 		</div>

@@ -35,8 +35,8 @@
 			?>
 			<?php echo $post_link; ?>
 			<?php edit_post_link( sprintf( __( 'Edit %s', 'milky-way' ), "<span class='screen-reader-text'>" . get_the_title() . "</span>" ), '<p class="edit">', '</p>' ); ?>
-		</div> 
 		<?php get_template_part( 'partials/post-meta-tags' ); ?>
+		</div> 
 		<!--
 		<?php trackback_rdf(); ?>
 		-->

@@ -86,9 +86,9 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 			'description' => __( 'Widgets in this region will appear on all posts and post archives', 'milky-way' ),
 			'id' => 'ps1',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div></div>',
-			'before_title' => '<h2>',
-			'after_title' => '</h2><div class="widget-inner">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-inner"><h2>',
+			'after_title' => '</h2></div>',
 		));
 
 		register_sidebar( array(
@@ -96,9 +96,9 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 			'description' => __( 'Add up to 5 widgets to show on the bottom of your front page.', 'milky-way' ),
 			'id' => 'ps2',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div></div>',
-			'before_title' => '<h2>',
-			'after_title' => '</h2><div class="widget-inner">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-inner"><h2>',
+			'after_title' => '</h2></div>',
 		));
 
 		register_sidebar( array(
@@ -106,9 +106,9 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 			'description' => __( 'Widgets in this region will appear on WordPress Pages.', 'milky-way' ),
 			'id' => 'ps3',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div></div>',
-			'before_title' => '<h2>',
-			'after_title' => '</h2><div class="widget-inner">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-inner"><h2>',
+			'after_title' => '</h2></div>',
 		));
 
 		register_sidebar( array(
@@ -116,9 +116,9 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'milky-way' ),
 			'id' => 'ps4',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div></div>',
-			'before_title' => '<h2>',
-			'after_title' => '</h2><div class="widget-inner">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-inner"><h2>',
+			'after_title' => '</h2></div>',
 		));
 
 		register_sidebar( array(
@@ -126,9 +126,9 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'milky-way' ),
 			'id' => 'ps5',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div></div>',
-			'before_title' => '<h2>',
-			'after_title' => '</h2><div class="widget-inner">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-inner"><h2>',
+			'after_title' => '</h2></div>',
 		));
 		
 		register_sidebar( array(
@@ -185,7 +185,7 @@ function milky_way_social_media_menu( $return ) {
 
 add_action( 'wp_print_styles', 'milky_way_load_styles' );
 function milky_way_load_styles() {
-		wp_register_style('heading', '//fonts.googleapis.com/css?family=Domine:400,700');
+		wp_register_style('heading', 'https://fonts.googleapis.com/css?family=Domine:400,700');
 		wp_enqueue_style( 'milky-way-style', get_stylesheet_uri(), array( 'dashicons', 'heading' ), '1.0' );	
 }
 
@@ -273,7 +273,7 @@ function milky_way_custom_header() {
 		}
 		echo "
 <style>
-	.header .text-header.has-image { background: #333 url($header_image) 50% 50% no-repeat; background-size: cover; height: $height; }
+	.header .text-header.has-image { background: #333 url($header_image) 50% 50% no-repeat; background-size: cover; min-height: $height }
 	.header { min-height: $height; }
 </style>
 ";	
@@ -324,6 +324,10 @@ function milky_way_enqueue_scripts() {
 		wp_localize_script( 'milkyWay.comments', 'milkyWayComments', $comment_i18n );
 	}
 	wp_enqueue_script( 'milkyWay.general', get_template_directory_uri() . '/js/general.js', array('jquery'), '1.0.0', true );
+	wp_localize_script( 'milkyWay.general', 'milkyWay', array( 
+		'close' => '<span class="screen-reader-text">' . __( 'Close', 'milky-way' ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-minus"></span>', 
+		'expand' => '<span class="screen-reader-text">' . __( 'Expand', 'milky-way' ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-plus"></span>' ) 
+	);
 	wp_register_style( 'milkyWay.woocommerce', get_template_directory_uri() . '/css/woocommerce.css' ); 
 	if ( class_exists( 'WC_Cart' ) ) {
 		wp_enqueue_style( 'milkyWay.woocommerce' );
@@ -340,6 +344,12 @@ function milky_way_archive_title( $display = true ) {
 	if ( is_category() || is_tax() ) {
 		$title = single_term_title( '', false );
 	}
+	if ( is_tag() ) {
+		$title = ucfirst( trim( single_tag_title( '', false ) ) );
+	}
+	if ( is_date() ) {
+		$title = trim( single_month_title( ' ', false ) );
+	}
 	if ( is_home() ) {
 		if ( !is_front_page() ) {
 			$title = get_bloginfo( 'name' ) . ' / ' . get_the_title( get_option( 'page_for_posts' ) );			
@@ -349,7 +359,7 @@ function milky_way_archive_title( $display = true ) {
 	} else {
 		$title = sprintf( __( '%s / Posts', 'milky-way' ), $title );
 	}
-	$title = "<div class='archive-title post-content'><h1>" . $title . "</h1></div>";
+	$title = "<div class='archive-title'><h1>" . $title . "</h1></div>";
 	if ( $display ) {
 		echo $title;
 	} else {

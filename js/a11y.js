@@ -37,16 +37,18 @@
 		// Store current link's url
 		var url = $(this).attr( "href" );
 
-		// Test if current host (domain) is in it
-		if ( hostname.test(url) ) {
-		   // If it's local...
-		   $(this).addClass( 'local' );
-		} else if ( url.slice(0, 1) == "#" ) {
-			// It's an anchor link
-			$(this).addClass( 'anchor' ); 
-		} else {
-		   // a link that does not contain the current host
-		   $(this).addClass( 'external' ).append( ' <span class="dashicons dashicons-external" aria-hidden="true"></span><span class="screen-reader-text">' + milkyWayA11y.externalLink + '</span>' );                        
+		if ( url ) {
+			// Test if current host (domain) is in it
+			if ( hostname.test(url) ) {
+			   // If it's local...
+			   $(this).addClass( 'local' );
+			} else if ( url.slice(0, 1) == "#" ) {
+				// It's an anchor link
+				$(this).addClass( 'anchor' ); 
+			} else {
+			   // a link that does not contain the current host
+			   $(this).addClass( 'external' ).append( ' <span class="dashicons dashicons-external" aria-hidden="true"></span><span class="screen-reader-text">' + milkyWayA11y.externalLink + '</span>' );                        
+			}
 		}
 	});	
 	

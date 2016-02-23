@@ -24,7 +24,8 @@
 				<h2 class="post-title" id="header-<?php the_ID(); ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php }
 		}
-		get_template_part( 'partials/post-meta' ); ?>
+		// No date or author provided on quotes
+		//get_template_part( 'partials/post-meta' ); ?>
 			<?php 
 			if ( milky_way_show_excerpt() ) { 
 				the_excerpt();
@@ -34,8 +35,8 @@
 			?>
 			<?php echo $post_link; ?>
 			<?php edit_post_link( sprintf( __( 'Edit %s', 'milky-way' ), "<span class='screen-reader-text'>" . get_the_title() . "</span>" ), '<p class="edit">', '</p>' ); ?>
-		</div> 
 		<?php get_template_part( 'partials/post-meta-tags' ); ?>
+		</div> 
 		<!--
 		<?php trackback_rdf(); ?>
 		-->
