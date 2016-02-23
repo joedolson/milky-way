@@ -7,7 +7,9 @@
 	<div class='image-format'>
 	<?php if ( has_post_thumbnail() ) { ?>
 		<div class='featured-image'><?php the_post_thumbnail(); ?></div>
-	<?php }
+	<?php } ?>
+		<div class='post-content' id="post-<?php the_ID(); ?>">
+	<?php
 		/* 
 		 * Handles posts without titles 
 		 */
@@ -24,7 +26,6 @@
 		}
 		get_template_part( 'partials/post-meta' );
 		?>
-		<div class='post-content' id="post-<?php the_ID(); ?>">
 			<?php 
 			if ( milky_way_show_excerpt() ) { 
 				the_excerpt();

@@ -50,10 +50,9 @@
 					}
 				?>
 				<div class="text-header<?php echo $class; ?>">
-					<?php echo ( is_front_page() ) ? $logo_img : ''; ?>
 					<div class='contents'>
 						<div class='inner-contents'>
-						<?php echo ( !is_front_page() ) ? $logo_img : ''; ?>
+						<?php echo $logo_img; ?>
 						<?php 
 						/**
 						 * If somebody sets their blog name to an empty string, their intent is probably to hide the site title on the home page.

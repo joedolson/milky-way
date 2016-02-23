@@ -5,9 +5,7 @@
 	<h2 class="screen-reader-text" id="sidebar-header"><?php _e( 'Sidebar', 'milky-way' ); ?></h2>
 	<?php echo apply_filters( 'milky_way_top_of_sidebar', '' ); ?>
 	<?php if ( is_front_page() || is_page_template( 'page-full-width.php' ) ) {
-		$sidebars = wp_get_sidebars_widgets();
-		$home_sidebar = $sidebars['ps2'];
-		$count = count( $home_sidebar );
+		$count = milky_way_get_widget_count( 'ps2' );
 		$class = " widgets-$count";
 	} else {
 		$class = " widgets";
@@ -20,7 +18,6 @@
 			dynamic_sidebar('Home Sidebar'); 
 			?></div><?php
 		} else {
-		
 			dynamic_sidebar( 'Global Sidebar - Top' ); 
 			if ( !is_page() ) { 
 				dynamic_sidebar( 'Post Sidebar' );

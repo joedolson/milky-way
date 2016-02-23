@@ -5,7 +5,6 @@
 		milky_way_archive_title();
 	} ?>
     <?php while ( have_posts() ) : the_post(); ?>
-	<div <?php post_class( 'post-content' ); ?>>
 		<?php
 			$format = get_post_format();
 			if ( $format === false ) {
@@ -29,7 +28,6 @@
 			echo '-->' . "\n";
 		}
 		?>
-	</div>
     <?php endwhile; ?>
 	<div class="prev_next">
 		<?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Posts','milky-way' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Posts %s','milky-way' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>

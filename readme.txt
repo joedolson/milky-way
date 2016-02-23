@@ -39,6 +39,12 @@ Nothing yet!
 
 * Initial upload.
 
+TODO: 
+ - Remove 'read more' text; design excerpt presentation better
+ - Look at placeholder text usage
+ - Improve dropdown menus in responsive mode. Use secondary collapse with button opening like 2015
+ - 
+
 == Frequently Asked Questions ==
 
 = You created this theme as a demo theme; can I use it for my site as it is? =

@@ -242,9 +242,9 @@ function milky_way_generate_custom_styles( $setting, $default ) {
 	}
 	if ( $value ) { 
 		$test_color = ( $theme_mod != '' ) ? esc_attr( $theme_mod ) : $default;
-		$viable = milky_way_compare_contrast( $test_color, apply_filters( 'milky_way_custom_link_color', '#0000dd' ) );
+		$viable = milky_way_compare_contrast( $test_color, apply_filters( 'milky_way_custom_link_color', '#2929EC' ) );
 		if ( $viable ) { 
-			$color = ".$setting { color: ".milky_way_inverse_color( $test_color )."; }\n.$setting a { color: #0000dd; }\n";
+			$color = ".$setting { color: ".milky_way_inverse_color( $test_color )."; }\n.$setting a { color: #2929EC; }\n";
 		} else {
 			$color = ".$setting, .$setting a { color: ".milky_way_inverse_color( $test_color )."; }\n"; 
 		}
@@ -262,10 +262,14 @@ function milky_way_custom_header_image( $value ) {
 add_action( 'wp_head', 'milky_way_custom_header' );
 function milky_way_custom_header() {
 		$header_image = get_header_image();
-		if ( get_custom_header()->height > 260 ) {
-			$height       = ( is_front_page() ) ? get_custom_header()->height . 'px' : apply_filters( 'milky_way_inner_header_height', '260px' );
+		if ( $header_image ) {
+			if ( get_custom_header()->height > 260 ) {
+				$height       = ( is_front_page() ) ? get_custom_header()->height . 'px' : apply_filters( 'milky_way_inner_header_height', '260px' );
+			} else {
+				$height       = ( is_front_page() ) ? apply_filters( 'milky_way_inner_header_height', '260px' ): get_custom_header()->height . 'px';
+			}
 		} else {
-			$height       = ( is_front_page() ) ? apply_filters( 'milky_way_inner_header_height', '260px' ): get_custom_header()->height . 'px';
+			$height = '260px';
 		}
 		echo "
 <style>
@@ -345,7 +349,7 @@ function milky_way_archive_title( $display = true ) {
 	} else {
 		$title = sprintf( __( '%s / Posts', 'milky-way' ), $title );
 	}
-	$title = "<div class='archive-title'><h1>" . $title . "</h1></div>";
+	$title = "<div class='archive-title post-content'><h1>" . $title . "</h1></div>";
 	if ( $display ) {
 		echo $title;
 	} else {
@@ -364,4 +368,19 @@ function milky_way_theme_wrapper_start() {
 
 function milky_way_theme_wrapper_end() {
   echo '</section>';
+}
+
+/**
+ * @param $id string Sidebar id
+ * @return $count integer number of widgets in this sidebar
+ */
+function milky_way_get_widget_count( $id = false ) {
+	$count = 0;
+	if ( $id ) {
+		$sidebars = wp_get_sidebars_widgets();
+		$sidebar = $sidebars[$id];
+		$count = count( $sidebar );
+	}
+	
+	return $count;
 }

@@ -58,7 +58,7 @@ body {
 }
 
 a { 
-	color: #00d;
+	color: #2929EC;
 	display: inline-block;
 }
 
@@ -81,7 +81,7 @@ a:hover, a:focus, a:active {
 }
 
 .sticky {
-	background-color: rgba( 0,0,0,.1 );
+	background-color: rgba( 0,0,0,.05 );
 	z-index: 2;
 }
 
@@ -270,14 +270,14 @@ embed, iframe, object {
 	border-bottom: 1px solid #000;
 }
 
-.home .header .logo {
-	position: absolute;
-	width: 100%;
-	top: 4em;
+.header .text-header .inner-contents:after {
+	display: table;
+	content: '';
+	clear: both;
 }
 
 .header .contents .logo img {
-	width: 100px;
+	width: 150px;
 	height: auto !important;
 	margin: .5em auto;
 }
@@ -328,7 +328,7 @@ embed, iframe, object {
 .header .site-description {
 	font-size: 1.4em; 
 	text-transform: uppercase;
-	opacity: .95; 
+	opacity: .85; 
 }
 
 .meta {
@@ -347,10 +347,6 @@ embed, iframe, object {
 	border-bottom: 1px solid rgba( 0,0,0,.05 );
 	border-radius: 0 0 1em 1em;
 	margin-top: 1em;
-}
-
-.widget h2 {
-	padding: 1rem 1rem 0;
 }
 
 .home-widget-container {
@@ -490,7 +486,7 @@ p.edit {
 }
 
 .widget-inner {
-	padding: 1em 1.5em;
+	padding: 1em 0;
 }
 
 .searchform {
@@ -504,9 +500,9 @@ p.edit {
 .post-content textarea,
 .post-content select {
 	font-size: 1.2em; 
-	padding: 4px;
 }
 
+input[type=password],
 .searchform input[type=text], 
 .mc-search input[type=text], 
 .widget_mcm_search_widget input[type=text], 
@@ -515,11 +511,9 @@ p.edit {
 .post-content select {
 	margin-bottom: .5em;
 	border-color: #ccc;
-	border-width: 1px;	
-}
-
-.post-content input, .post-content textarea, .post-content select {
-	width: 100%;
+	border-width: 1px;
+	width: 96%;
+	padding: 4px 2%;	
 }
 
 .post-content input[type='submit'] {
@@ -575,12 +569,19 @@ p.edit {
 
 .sticky {
 	padding: 1em;
-	margin: -1em -1em 0;
+	box-shadow: 5px 5px 1px #bbb;
+	font-size: 1.2em;
+}
+
+.sticky .post-title {
+	background: rgba( 0,0,0,.08 );
+	margin: -.5em -.5em 0;
+	padding: .25em .5em;
+	border-bottom: 1px solid rgba( 0,0,0,.15 );
 }
 
 .sticky .meta {
 	border: none;
-	box-shadow: 0px 0px 0px #000;
 	padding: 0;
 }
 
@@ -653,6 +654,11 @@ p.edit {
 .social-networks a[href*="vimeo.com"]:before { font-family: icomoon; content: "\ea9d"; }
 
 /* Comments */
+.comments-wrapper {
+	padding: 2em;
+	background: rgba( 240,240,240, .9 );
+}
+
 .comments-wrapper .commentlist, .comments-wrapper .commentlist ol {
 	margin: 0;
 }
@@ -768,7 +774,7 @@ p.edit {
 }
 
 label[for=comment], label[for=email], label[for=author], label[for=url] { display: block; }
-textarea[id=comment] { width: 100%; }
+textarea[id=comment] { width: 98%; padding: 1%; }
 
 /* Utility Classes */
 .milky-way-clear:after { content: ''; display: table; clear: both; }
@@ -822,6 +828,15 @@ textarea[id=comment] { width: 100%; }
 
 /* Triggered when wider than 800px */
 @media only screen and (min-width: 800px) {
+	
+	.front-page-wrapper {
+		padding: 0 4em;
+	}
+	
+	.blog .front-page-wrapper {
+		padding: 0;
+	}
+	
 	.menu-toggle { display: none; }
 	
 	.sub-menu:before {
@@ -906,8 +921,8 @@ textarea[id=comment] { width: 100%; }
 		width: 150px;
 		height: auto !important;
 	}	
-	.not-home .header .has-logo .site-title, .not-home .header .has-logo .site-description {
-		width: 960px;
+	.header .has-logo .site-title, .header .has-logo .site-description {
+		width: 780px;
 		text-align: left;
 		padding-left: 180px;
 		margin: 0 auto;

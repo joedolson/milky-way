@@ -173,7 +173,7 @@ function milky_way_insert_breadcrumbs() {
 
 function milky_way_breadcrumbs() {
     global $post;
-	$sep = ( is_rtl() ) ? "<span class='separator'> &laquo; </span>" : "<span class='separator'> &raquo; </span>";
+	$sep = ( is_rtl() ) ? "<span class='separator'> \ </span>" : "<span class='separator'> / </span>";
     $breadcrumb = '<p class="breadcrumbs">';
 
 	$link = '<span class="breadcrumb top-level"><a href="'.esc_url( home_url( '/' ) ).'">'.apply_filters( 'milky_way_breadcrumb_home_text', __( 'Home', 'milky-way' ) ).'</a></span>';

@@ -15,7 +15,9 @@
 		<section>
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class='featured-image'><?php the_post_thumbnail(); ?></div>
-		<?php }
+		<?php } ?>
+			<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
+		<?php
 			$post_link = ''; 
 			if ( get_the_title() == '' ) {
 				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'milky-way' ), get_the_permalink() ) );
@@ -27,7 +29,6 @@
 				<?php if ( get_the_title() != '' ) { ?>
 					<h1 class="post-title" id="title-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 				<?php } ?>
-				<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
 					<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'milky-way' ), get_the_title() ) ); ?>
 					<div class='home-widget-container'>
 						<div class='home-widgets'>
@@ -48,7 +49,6 @@
 					</div>
 					<?php echo $post_link; ?>
 					<?php edit_post_link( sprintf( __( 'Edit %s', 'milky-way' ), "<span class='screen-reader-text'>" . get_the_title() . "</span>" ), '<p class="edit">', '</p>' ); ?>			
-				</div> 
 				<!--
 				<?php trackback_rdf(); ?>
 				-->
@@ -58,7 +58,6 @@
 				<?php
 				get_template_part( 'partials/post-meta' ); ?>
 
-				<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
 					<?php 
 					if ( milky_way_show_excerpt() ) { 
 						the_excerpt();
@@ -68,9 +67,9 @@
 					?>
 					<?php echo $post_link; ?>
 					<?php edit_post_link( sprintf( __( 'Edit %s', 'milky-way' ), "<span class='screen-reader-text'>" . get_the_title() . "</span>" ), '<p class="edit">', '</p>' ); ?>			
-				</div> 
 
 			<?php } ?>
+			</div>
 		</section>
 	</div>
     <?php endwhile; ?>
