@@ -338,6 +338,7 @@ function milky_way_enqueue_scripts() {
 }
 
 function milky_way_archive_title( $display = true ) {	
+	$hidden = '';
 	if ( is_archive() ) {
 		$title = post_type_archive_title( '', false );
 	}
@@ -354,12 +355,15 @@ function milky_way_archive_title( $display = true ) {
 		if ( !is_front_page() ) {
 			$title = get_bloginfo( 'name' ) . ' / ' . get_the_title( get_option( 'page_for_posts' ) );			
 		} else {
+			$hidden = ' screen-reader-text';
 			$title = sprintf( __( '%s / Posts', 'milky-way' ), get_bloginfo( 'name' ) );
 		}
 	} else {
 		$title = sprintf( __( '%s / Posts', 'milky-way' ), $title );
 	}
-	$title = "<div class='archive-title'><h1>" . $title . "</h1></div>";
+	if ( $title ) {
+		$title = "<div class='archive-title$hidden'><h1>" . $title . "</h1></div>";
+	}
 	if ( $display ) {
 		echo $title;
 	} else {
