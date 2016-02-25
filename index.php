@@ -14,11 +14,6 @@
 		?>	
 		<div class="comments">
 			<?php wp_link_pages(); ?>
-			<?php 
-			if ( comments_open() || get_comments_number() ) {
-				comments_popup_link( __( 'Comments (0)', 'milky-way' ), __( 'Comments (1)', 'milky-way' ), __( 'Comments (%)', 'milky-way' ) ); 
-			}
-			?>
 		</div>
 		<?php
 		/* Only render trackback_rdf when appropriate and allowed */

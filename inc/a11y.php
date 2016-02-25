@@ -48,7 +48,7 @@ function milky_way_custom_excerpt_more( $output ) {
 }
 
 function milky_way_continue_reading( $id ) {
-    return '<a class="continue" href="'.get_permalink( $id ).'">'. sprintf( __( 'Finish Reading%s', 'milky-way' ), "<span> ".get_the_title( $id )."</span>" ) . '</a>';
+    return '<a class="continue" href="'.get_permalink( $id ).'">'. sprintf( __( 'Finish Reading%s', 'milky-way' ), "<em> &ldquo;".get_the_title( $id )."&rdquo;</em> <span class='dashicon dashicons-arrow-right-alt2' aria-hidden='true'></span>" ) . '</a>';
 }
 
 /*

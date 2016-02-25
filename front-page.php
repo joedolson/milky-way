@@ -28,27 +28,29 @@
 			if ( is_page() ) { ?>
 				<?php if ( get_the_title() != '' ) { ?>
 					<h1 class="post-title" id="title-<?php the_ID(); ?>"><?php the_title(); ?></h1>
-				<?php } ?>
-					<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'milky-way' ), get_the_title() ) ); ?>
-					<div class='home-widget-container'>
-						<div class='home-widgets'>
-							<?php 
-							$customizer = add_query_arg( 'url', urlencode( home_url() ), admin_url( 'customize.php' ) );
-							if ( !is_active_sidebar('Front Page Content - Left') ) { 
-								echo ( current_user_can( 'edit_theme_options' ) ) ? "<div class='widget home-left'><p class='get-started'><a href='$customizer'>Add Widget Here</a></p></div>" : '';
-							} else {
-								dynamic_sidebar('Front Page Content - Left');
-							}
-							if ( !is_active_sidebar('Front Page Content - Right') ) {
-								echo ( current_user_can( 'edit_theme_options' ) ) ? "<div class='widget home-right'><p class='get-started'><a href='$customizer'>Add Widget Here</a></p></div>" : '';
-							} else {
-								dynamic_sidebar('Front Page Content - Right');
-							}
-							?>
-						</div>
+				<?php }
+				the_content( sprintf( __( 'Finish reading &ldquo;<em>%s</em>&rdquo;', 'milky-way' ), get_the_title() ) ); ?>
+				<div class='home-widget-container'>
+					<div class='home-widgets'>
+						<?php 
+						$customizer = add_query_arg( 'url', urlencode( home_url() ), admin_url( 'customize.php' ) );
+						if ( !is_active_sidebar('Front Page Content - Left') ) { 
+							echo ( current_user_can( 'edit_theme_options' ) ) ? "<div class='widget home-left'><p class='get-started'><a href='$customizer'>Add Widget Here</a></p></div>" : '';
+						} else {
+							dynamic_sidebar('Front Page Content - Left');
+						}
+						if ( !is_active_sidebar('Front Page Content - Right') ) {
+							echo ( current_user_can( 'edit_theme_options' ) ) ? "<div class='widget home-right'><p class='get-started'><a href='$customizer'>Add Widget Here</a></p></div>" : '';
+						} else {
+							dynamic_sidebar('Front Page Content - Right');
+						}
+						?>
 					</div>
-					<?php echo $post_link; ?>
-					<?php edit_post_link( sprintf( __( 'Edit %s', 'milky-way' ), "<span class='screen-reader-text'>" . get_the_title() . "</span>" ), '<p class="edit">', '</p>' ); ?>			
+				</div>
+				<?php 
+				echo $post_link; 
+				edit_post_link( sprintf( __( 'Edit %s', 'milky-way' ), "<span class='screen-reader-text'>" . get_the_title() . "</span>" ), '<p class="edit">', '</p>' ); 
+				?>		
 				<!--
 				<?php trackback_rdf(); ?>
 				-->
@@ -62,7 +64,7 @@
 					if ( milky_way_show_excerpt() ) { 
 						the_excerpt();
 					} else {
-						the_content( sprintf( __( 'Finish reading <em>%s</em>', 'milky-way' ), get_the_title() ) ); 
+						the_content( sprintf( __( 'Finish reading &ldquo;<em>%s</em>&rdquo;', 'milky-way' ), get_the_title() ) ); 
 					}	
 					?>
 					<?php echo $post_link; ?>

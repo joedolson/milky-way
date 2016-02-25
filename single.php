@@ -20,10 +20,7 @@
 								'nextpagelink' => 'Next Page<span class="dashicon nextpage" aria-hidden="true"></span>',
 								'previouspagelink' => '<span class="dashicon prevpage" aria-hidden="true"></span>Previous Page'
 							);
-					wp_link_pages( $args ); 
-					if ( comments_open() || get_comments_number() ) {
-						comments_popup_link( __( 'Comments (0)', 'milky-way' ), __( 'Comments (1)', 'milky-way' ), __( 'Comments (%)', 'milky-way' ) ); 
-					}
+					wp_link_pages( $args );
 				?>
 			</div>
 		<?php } ?>

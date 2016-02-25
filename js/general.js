@@ -11,10 +11,10 @@
 		}
 	} );
 	
-	var width = $( window ).width();
+	var width = $( window ).width();	
 	
 	if ( width < 800 ) {
-		$( '.primary-menu nav ul' ).hide();
+		$( '.primary-menu nav .menu' ).hide();
 		$( '.primary-menu nav .sub-menu' ).hide();	
 		$( '.primary-menu .menu-item-has-children > a' ).after( ' <button class="dropdown-toggle text-button" aria-expanded="false">' + milkyWay.expand + '</button> ' );
 	}
@@ -40,7 +40,7 @@
 				if ( width <= 800 ) {
 					$( '.primary-menu nav .menu').hide();
 				} else {
-					$( '.primary-menu nav .menu').show();
+					$( '.primary-menu nav .menu').show();					
 				}
 			}
 		});
