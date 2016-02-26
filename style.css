@@ -692,10 +692,10 @@ input[type=password],
 .social-networks.align-left { text-align: left; }
 .social-networks.align-right { text-align: right; }
 .social-networks li { display: inline-block; }
-.social-networks a:before { font-family: dashicons; vertical-align: middle; padding: 2px; margin: 0 0 0 2px; }
+.social-networks a:before { font-family: dashicons; vertical-align: middle; padding: 2px; margin: 0 0 0 2px; border: 1px solid transparent; border-radius: 5px; }
 .social-networks a span { font-family: Raleway, Helvetica, Arial, sans-serif; }
 .social-networks a { text-decoration: none; font-size: 2.5em; line-height: 1; }
-.social-networks a:hover:before, .social-networks a:focus:before { background: rgba( 0,0,0,.8 ); color: #fff; border-radius: 5px; }
+.social-networks a:hover:before, .social-networks a:focus:before { background: rgba( 0,0,0,.8 ); color: #fff; border: 1px solid #fff; border-radius: 5px; }
 
 /* dashicon fonts */
 .social-networks a[href*="twitter.com"]:before { content: "\f301"; }

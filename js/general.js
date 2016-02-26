@@ -16,7 +16,9 @@
 	if ( width < 800 ) {
 		$( '.primary-menu nav .menu' ).hide();
 		$( '.primary-menu nav .sub-menu' ).hide();	
-		$( '.primary-menu .menu-item-has-children > a' ).after( ' <button class="dropdown-toggle text-button" aria-expanded="false">' + milkyWay.expand + '</button> ' );
+		$( '.primary-menu .menu-item-has-children > a' ).each( function () {
+			$( this ).after( ' <button class="dropdown-toggle text-button" aria-expanded="false">' + milkyWay.expand + '</button> ' );
+		});
 	}
 	
 	$( '.dropdown-toggle' ).on( 'click', function() {

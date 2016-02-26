@@ -76,10 +76,16 @@ function milky_way_inverse_color( $color ) {
  * This function takes a given hexadecimal color and shifts it a step lighter or darker, depending on the current color band.
  * Used with theme customizer to prevent non-WCAG compliant color combinations.
  */
-function milky_way_shift_color( $color ) {
+function milky_way_shift_color( $color, $increment = 'medium' ) {
 	$color = str_replace('#','',$color);
 	$rgb = ''; // Empty variable
-	$percent = ( milky_way_inverse_color( $color ) == '#ffffff' ) ? -20 : 20;
+	switch( $increment ) {
+		case 'small' : $percent = 10; break;
+		case 'large' : $percent = 30; break;
+		case is_numeric( $increment ) : $percent = $increment; break;
+		default: $percent = 20;
+	}
+	$percent = ( milky_way_inverse_color( $color ) == '#ffffff' ) ? -( $percent ) : $percent;
     $per = $percent/100*255; // Creates a percentage to work with. Change the middle figure to control colour temperature
     if  ($per < 0 ) {
         // DARKER

@@ -67,9 +67,13 @@ function milky_way_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'milky_way_sanitize_content_display', 
 	));
 	$wp_customize->add_setting( 'milky_way_sm_alignment', array( 
-		'default' => 'full',
+		'default' => 'center',
 		'sanitize_callback' => 'milky_way_sanitize_sm_alignment', 
 	));	
+	$wp_customize->add_setting( 'milky_way_text_position', array( 
+		'default' => '2em',
+		'sanitize_callback' => 'sanitize_text_field', 
+	));		
 	$wp_customize->add_setting( 'milky_way_ajax_comments', array( 
 		'default' => '1',
 		'sanitize_callback' => 'milky_way_sanitize_checkbox', 
@@ -188,7 +192,17 @@ function milky_way_customize_register( $wp_customize ) {
 				'right'     => 'Right',
 			),
 		)
-	);		
+	);	
+
+	$wp_customize->add_control( 
+		'milky_way_control_content', 
+		array(
+			'label'    => __( 'Header text (distance from top)', 'milky-way' ),
+			'section'  => 'milky_way_content',
+			'settings' => 'milky_way_text_position',
+			'type'     => 'text',
+		)
+	);	
 	
 	// Content Display
 	$wp_customize->add_control( 
@@ -213,7 +227,7 @@ function milky_way_sanitize_content_display( $value ) {
 }
 
 /**
- * Sanitize setting saved for content display. Only two values allowed.
+ * Sanitize setting saved for social network menu alignment. Only three values allowed.
 */
 function milky_way_sanitize_sm_alignment( $value ) {
 	if ( $value == 'center' || $value == 'left' || $value == 'right' ) {

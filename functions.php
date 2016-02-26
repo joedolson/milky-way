@@ -261,18 +261,22 @@ function milky_way_custom_header() {
 		$header_image = get_header_image();
 		if ( $header_image ) {
 			if ( get_custom_header()->height > 260 ) {
-				$height       = ( is_front_page() ) ? get_custom_header()->height . 'px' : apply_filters( 'milky_way_inner_header_height', '260px' );
+				$height = ( is_front_page() ) ? get_custom_header()->height . 'px' : apply_filters( 'milky_way_inner_header_height', '260px' );
 			} else {
-				$height       = ( is_front_page() ) ? apply_filters( 'milky_way_inner_header_height', '260px' ): get_custom_header()->height . 'px';
+				$height = ( is_front_page() ) ? apply_filters( 'milky_way_inner_header_height', '260px' ): get_custom_header()->height . 'px';
 			}
 		} else {
 			$height = '260px';
 		}
-		$color = get_theme_mod( 'milky_way_header_bg' );
+		$distance = esc_html( get_theme_mod( 'milky_way_text_position' ) );
+		$color = esc_html( get_theme_mod( 'milky_way_header_bg' ) );
+		$shadow = esc_html( milky_way_shift_color( $color, 'small' ) );
 		echo "
 <style>
+	.header .text-header { padding-top: $distance; }
 	.header .text-header.has-image { background: $color url($header_image) 50% 50% no-repeat; background-size: cover; min-height: $height }
 	.header { min-height: $height; }
+	.header .social-networks a { text-shadow: 3px 3px 0 $shadow,-1px -1px 0 $shadow,1px -1px 0 $shadow,-1px 1px 0 #000,1px 1px 0 $shadow; }
 </style>
 ";	
 }
@@ -323,8 +327,8 @@ function milky_way_enqueue_scripts() {
 	}
 	wp_enqueue_script( 'milkyWay.general', get_template_directory_uri() . '/js/general.js', array('jquery'), '1.0.0', true );
 	wp_localize_script( 'milkyWay.general', 'milkyWay', array( 
-		'close' => '<span class="screen-reader-text">' . __( 'Close', 'milky-way' ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-minus"></span>', 
-		'expand' => '<span class="screen-reader-text">' . __( 'Expand', 'milky-way' ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-plus"></span>' ) 
+		'close' => '<span class="screen-reader-text">' . __( 'Close %s Sub-menu', 'milky-way' ) ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-minus"></span>', 
+		'expand' => '<span class="screen-reader-text">' . __( 'Open %s Sub-menu', 'milky-way' ) ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-plus"></span>' ) 
 	);
 	wp_register_style( 'milkyWay.woocommerce', get_template_directory_uri() . '/css/woocommerce.css' ); 
 	if ( class_exists( 'WC_Cart' ) ) {
