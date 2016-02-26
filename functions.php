@@ -327,8 +327,8 @@ function milky_way_enqueue_scripts() {
 	}
 	wp_enqueue_script( 'milkyWay.general', get_template_directory_uri() . '/js/general.js', array('jquery'), '1.0.0', true );
 	wp_localize_script( 'milkyWay.general', 'milkyWay', array( 
-		'close' => '<span class="screen-reader-text">' . __( 'Close %s Sub-menu', 'milky-way' ) ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-minus"></span>', 
-		'expand' => '<span class="screen-reader-text">' . __( 'Open %s Sub-menu', 'milky-way' ) ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-plus"></span>' ) 
+		'close' => '<span class="screen-reader-text">' . __( 'Close %s Sub-menu', 'milky-way' ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-minus"></span>', 
+		'expand' => '<span class="screen-reader-text">' . __( 'Open %s Sub-menu', 'milky-way' ) . ' </span>' . '<span aria-hidden="true" class="dashicons dashicons-plus"></span>' ) 
 	);
 	wp_register_style( 'milkyWay.woocommerce', get_template_directory_uri() . '/css/woocommerce.css' ); 
 	if ( class_exists( 'WC_Cart' ) ) {
