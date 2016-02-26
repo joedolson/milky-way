@@ -176,7 +176,10 @@ function milky_way_home_title( $title ) {
 add_filter( 'milky_way_end_of_header', 'milky_way_social_media_menu' );
 function milky_way_social_media_menu( $return ) {
 	if ( has_nav_menu( 'social-networks' ) ) {
-		$return = "<div class='social-networks' role='navigation' aria-label='Social Media'>";
+		$alignment = esc_attr( get_theme_mod( 'milky_way_sm_alignment' ) );
+		$alignment = ( $alignment == false || $alignment == '' ) ? 'center' : $alignment;
+		$class     = " align-$alignment";
+		$return = "<div class='social-networks$class' role='navigation' aria-label='Social Media'>";
 		$return .= wp_nav_menu( array( 'theme_location'=>'social-networks', 'fallback_cb'=>'', 'echo'=>false, 'link_before'=>'<span class="screen-reader-text">', 'link_after'=>'</span>' ) );
 		$return .= "</div>";
 	}
@@ -204,7 +207,7 @@ function milky_way_show_excerpt() {
 add_action( 'wp_head', 'milky_way_customizer_styles' );
 function milky_way_customizer_styles() {
 
-	$header = 	milky_way_generate_custom_styles( 'header', '#ffffff' );
+	$header = 	milky_way_generate_custom_styles( 'header', '#222222' );
 	$sidebar = 	milky_way_generate_custom_styles( 'sidebar', '#ffffff' );
 	$content = 	milky_way_generate_custom_styles( 'content', '#ffffff' );
 	$menu = 	milky_way_generate_custom_styles( 'primary-menu', '#111111' );
@@ -241,22 +244,16 @@ function milky_way_generate_custom_styles( $setting, $default ) {
 		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting { background-color: ".esc_attr( $theme_mod )."; }\n" : ".$setting { background-color: ".$default."; }\n";
 	}
 	if ( $value ) { 
+		$default_link_color = ( $setting == 'header' ) ? '#111111' : '#2929EC';
 		$test_color = ( $theme_mod != '' ) ? esc_attr( $theme_mod ) : $default;
-		$viable = milky_way_compare_contrast( $test_color, apply_filters( 'milky_way_custom_link_color', '#2929EC' ) );
+		$viable = milky_way_compare_contrast( $test_color, apply_filters( 'milky_way_custom_link_color', $default_link_color ) );
 		if ( $viable ) { 
-			$color = ".$setting { color: ".milky_way_inverse_color( $test_color )."; }\n.$setting a { color: #2929EC; }\n";
+			$color = ".$setting { color: ".milky_way_inverse_color( $test_color )."; }\n.$setting a { color: $default_link_color }\n";
 		} else {
 			$color = ".$setting, .$setting a { color: ".milky_way_inverse_color( $test_color )."; }\n"; 
 		}
 	}
 	return $value.$color;
-}
-
-add_filter( 'milky_way_end_of_header', 'milky_way_custom_header_image' );
-function milky_way_custom_header_image( $value ) {
-	if ( get_header_image() ) {
-	//	echo "<div class='header-image'></div>";		
-	}
 }
 
 add_action( 'wp_head', 'milky_way_custom_header' );
@@ -271,9 +268,10 @@ function milky_way_custom_header() {
 		} else {
 			$height = '260px';
 		}
+		$color = get_theme_mod( 'milky_way_header_bg' );
 		echo "
 <style>
-	.header .text-header.has-image { background: #333 url($header_image) 50% 50% no-repeat; background-size: cover; min-height: $height }
+	.header .text-header.has-image { background: $color url($header_image) 50% 50% no-repeat; background-size: cover; min-height: $height }
 	.header { min-height: $height; }
 </style>
 ";	

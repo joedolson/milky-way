@@ -34,10 +34,10 @@
 		 */
 		?>
 		<?php echo apply_filters( 'milky_way_before_header_role', '' ); ?>
-		<div id="header" class='header'>
+		<?php $class = ( get_header_image() ) ? ' has-image' : ' no-image'; ?>
+		<div id="header" class='header<?php echo $class; ?>'>
 			<header role="banner">
 				<?php echo apply_filters( 'milky_way_top_of_header', '' ); ?>
-				<?php $class = ( get_header_image() ) ? ' has-image' : ' no-image'; ?>
 				<?php 
 					$logo_img = '';
 					$has_logo = '';
