@@ -180,7 +180,7 @@ function milky_way_customize_register( $wp_customize ) {
 	
 	// Content Display
 	$wp_customize->add_control( 
-		'milky_way_control_content', 
+		'milky_way_sm_alignment', 
 		array(
 			'label'    => __( 'Align Social Media', 'milky-way' ),
 			'section'  => 'milky_way_content',
@@ -195,7 +195,7 @@ function milky_way_customize_register( $wp_customize ) {
 	);	
 
 	$wp_customize->add_control( 
-		'milky_way_control_content', 
+		'milky_way_text_position', 
 		array(
 			'label'    => __( 'Header text (distance from top)', 'milky-way' ),
 			'section'  => 'milky_way_content',

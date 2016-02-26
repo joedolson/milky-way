@@ -269,6 +269,7 @@ function milky_way_custom_header() {
 			$height = '260px';
 		}
 		$distance = esc_html( get_theme_mod( 'milky_way_text_position' ) );
+		$height = "calc( $height - ( $distance / 2 ) )";
 		$color = esc_html( get_theme_mod( 'milky_way_header_bg' ) );
 		$shadow = esc_html( milky_way_shift_color( $color, 'small' ) );
 		echo "

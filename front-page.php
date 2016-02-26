@@ -33,13 +33,13 @@
 				<div class='home-widget-container'>
 					<div class='home-widgets'>
 						<?php 
-						$customizer = add_query_arg( 'url', urlencode( home_url() ), admin_url( 'customize.php' ) );
-						if ( !is_active_sidebar('Front Page Content - Left') ) { 
+						$customizer = add_query_arg( 'url', urlencode( home_url() ), admin_url( 'widgets.php' ) );
+						if ( !is_active_sidebar( 'ps6' ) ) { 
 							echo ( current_user_can( 'edit_theme_options' ) ) ? "<div class='widget home-left'><p class='get-started'><a href='$customizer'>Add Widget Here</a></p></div>" : '';
 						} else {
-							dynamic_sidebar('Front Page Content - Left');
+							dynamic_sidebar( 'Front Page Content - Left' );
 						}
-						if ( !is_active_sidebar('Front Page Content - Right') ) {
+						if ( !is_active_sidebar('ps7') ) {
 							echo ( current_user_can( 'edit_theme_options' ) ) ? "<div class='widget home-right'><p class='get-started'><a href='$customizer'>Add Widget Here</a></p></div>" : '';
 						} else {
 							dynamic_sidebar('Front Page Content - Right');
