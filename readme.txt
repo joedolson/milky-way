@@ -2,8 +2,8 @@
 Contributors: joedolson
 Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, dark, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
-Requires at least: 4.0.5
-Tested up to: 4.2
+Requires at least: 4.2
+Tested up to: 4.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 
@@ -11,7 +11,7 @@ Milky Way: Ready for accessibility, responsive, and waiting for your content.
 
 == Description ==
 
-Need.
+Milky Way is a flexible theme, appropriate for use as a blog or organization web site, or extensible via filters in a plug-in or extended through a child theme. Rich in simple settings to customize colors and characteristics, but unopinionated, so you can easily modify styles without needing to resort to unnecessary specificity in your CSS. Milky Way has great accessibility, so you can trust that the theme has done everything it can to ensure your site is accessible to people with disabilities.
 
 == Licensing: ==
 
@@ -20,13 +20,6 @@ Screenshot photo: Personal photo. I hereby declare it GPL. Cheers.
 Font: Google Fonts (http://www.google.com/fonts/specimen/Domine) [SIL Open Font License, 1.1]
 Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
  
-== Translations ==
- 
-Translations are always appreciated. Visit <a href="http://translate.joedolson.com/projects/milky-way/">my translations site</a> to start getting your language into shape!
-
-Available languages (in order of completeness):
-Nothing yet!
-
 == Installation ==
 
 1. Download the theme's zip file, extract the contents, and upload them to your wp-content/themes folder.
@@ -38,12 +31,6 @@ Nothing yet!
 = 1.0.0 =
 
 * Initial upload.
-
-TODO: 
- - Remove 'read more' text; design excerpt presentation better
- - Look at placeholder text usage
- - Improve dropdown menus in responsive mode. Use secondary collapse with button opening like 2015
- - 
 
 == Frequently Asked Questions ==
 
@@ -74,4 +61,4 @@ https://addons.mozilla.org/en-US/firefox/addon/headingsmap/
 
 == Upgrade Notice ==
 
-* 0.9.0 Initial submission.
+* 1.0.0 Initial submission.
