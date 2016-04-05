@@ -28,6 +28,10 @@ Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
 
 == Changelog ==
 
+= 1.0.1 =
+
+* Filter on default link color needs to filter when used, not just when compared.
+
 = 1.0.0 =
 
 * Initial upload.

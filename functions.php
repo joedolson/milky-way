@@ -244,9 +244,9 @@ function milky_way_generate_custom_styles( $setting, $default ) {
 		$value = ( $theme_mod && $theme_mod != $default ) ? ".$setting { background-color: ".esc_attr( $theme_mod )."; }\n" : ".$setting { background-color: ".$default."; }\n";
 	}
 	if ( $value ) { 
-		$default_link_color = ( $setting == 'header' ) ? '#111111' : '#2929EC';
+		$default_link_color = ( $setting == 'header' ) ? '#111111' : apply_filters( 'milky_way_custom_link_color', '#2929EC' );
 		$test_color = ( $theme_mod != '' ) ? esc_attr( $theme_mod ) : $default;
-		$viable = milky_way_compare_contrast( $test_color, apply_filters( 'milky_way_custom_link_color', $default_link_color ) );
+		$viable = milky_way_compare_contrast( $test_color, $default_link_color );
 		if ( $viable ) { 
 			$color = ".$setting { color: ".milky_way_inverse_color( $test_color )."; }\n.$setting a { color: $default_link_color }\n";
 		} else {
