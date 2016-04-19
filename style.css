@@ -570,6 +570,7 @@ p.edit, .edit-link {
 
 input[type=password],
 input[type=email],
+input[type=url],
 .searchform input[type=text], 
 .mc-search input[type=text], 
 .widget_mcm_search_widget input[type=text], 
