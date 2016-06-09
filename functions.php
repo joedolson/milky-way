@@ -30,7 +30,7 @@ if ( ! function_exists( 'milky_way_setup' ) ) {
 	
 		global $content_width;
 		if ( ! isset( $content_width ) ) {
-			$content_width = 600; 
+			$content_width = 640; 
 		}
 
 		load_theme_textdomain( 'milky-way', get_template_directory() . '/lang' );
@@ -84,7 +84,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		register_sidebar( array(
 			'name'=>'Post Sidebar',
 			'description' => __( 'Widgets in this region will appear on all posts and post archives', 'milky-way' ),
-			'id' => 'ps1',
+			'id' => 'mw1',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="widget-inner"><h2>',
@@ -94,7 +94,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		register_sidebar( array(
 			'name'=>'Home Sidebar',
 			'description' => __( 'Add up to 5 widgets to show on the bottom of your front page.', 'milky-way' ),
-			'id' => 'ps2',
+			'id' => 'mw2',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="widget-inner"><h2>',
@@ -104,7 +104,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		register_sidebar( array(
 			'name'=>'Page Sidebar',
 			'description' => __( 'Widgets in this region will appear on WordPress Pages.', 'milky-way' ),
-			'id' => 'ps3',
+			'id' => 'mw3',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="widget-inner"><h2>',
@@ -114,7 +114,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		register_sidebar( array(
 			'name'=>'Global Sidebar - Top',
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'milky-way' ),
-			'id' => 'ps4',
+			'id' => 'mw4',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="widget-inner"><h2>',
@@ -124,7 +124,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		register_sidebar( array(
 			'name'=>'Global Sidebar - Bottom',
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'milky-way' ),
-			'id' => 'ps5',
+			'id' => 'mw5',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="widget-inner"><h2>',
@@ -134,7 +134,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		register_sidebar( array(
 			'name'=>'Front Page Content - Left',
 			'description' => __( 'Left Column on front page', 'milky-way' ),
-			'id' => 'ps6',
+			'id' => 'mw6',
 			'before_widget' => '<div id="%1$s" class="widget home-left %2$s"><div class="home-widget-inner">',
 			'after_widget' => '</div></div>',
 			'before_title' => '<h2 id="heading-fpcl">',
@@ -144,7 +144,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		register_sidebar( array(
 			'name'=>'Front Page Content - Right',
 			'description' => __( 'Right Column on front page', 'milky-way' ),
-			'id' => 'ps7',
+			'id' => 'mw7',
 			'before_widget' => '<div id="%1$s" class="widget home-right %2$s"><div class="home-widget-inner">',
 			'after_widget' => '</div></div>',
 			'before_title' => '<h2 id="heading-fpcr">',
@@ -395,7 +395,7 @@ function milky_way_get_widget_count( $id = false ) {
 	$count = 0;
 	if ( $id ) {
 		$sidebars = wp_get_sidebars_widgets();
-		$sidebar = $sidebars[$id];
+		$sidebar = isset( $sidebars[$id] ) ? $sidebars[$id] : array();
 		$count = count( $sidebar );
 	}
 	
