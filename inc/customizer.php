@@ -53,14 +53,6 @@ function milky_way_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'milky_way_menu_bg', array( 
 		'default' => '#111111',
 		'sanitize_callback' => 'sanitize_hex_color', 
-	));	
-	$wp_customize->add_setting( 'milky_way_logo', array( 
-		'default' => '',
-		'sanitize_callback' => 'esc_url_raw', 
-	));
-	$wp_customize->add_setting( 'milky_way_alt', array( 
-		'default' => '',
-		'sanitize_callback' => 'esc_sql', 
 	));		
 	$wp_customize->add_setting( 'milky_way_content_display', array( 
 		'default' => 'full',
@@ -139,29 +131,7 @@ function milky_way_customize_register( $wp_customize ) {
 				'settings' => 'milky_way_footer_bg',
 			)
 		)
-	);
-
-	$wp_customize->add_control( 
-		new WP_Customize_Upload_Control( 
-		$wp_customize, 
-		'milky_way_logo', 
-		array(
-			'label'       => __( 'Logo ', 'milky-way' ),
-			'section'     => 'milky_way_logo',
-			'settings'    => 'milky_way_logo'
-		) ) 
-	);		
-
-	// Logo Alt attribute
-	$wp_customize->add_control( 
-		'milky_way_alt', 
-		array(
-			'label'       => __( 'Logo alt attribute', 'milky-way' ),
-			'section'     => 'milky_way_logo',
-			'settings'    => 'milky_way_alt',
-			'type'        => 'text',
-		)
-	);		
+	);	
 	
 	// Content Display
 	$wp_customize->add_control( 

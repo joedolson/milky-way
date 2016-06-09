@@ -51,6 +51,7 @@ if ( ! function_exists( 'milky_way_setup' ) ) {
 				'default-image' => get_template_directory_uri() . '/images/header.jpg',
 				'uploads' => true
 			) ) );
+		add_theme_support( 'custom-logo' );			
 		add_theme_support( 'custom-background', apply_filters( 'milky_way_custom_background_args', array(
 				'default-color' => '#e6e6e6',
 				'default-image' => '',

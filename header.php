@@ -41,10 +41,10 @@
 				<?php 
 					$logo_img = '';
 					$has_logo = '';
-					$logo = esc_url( get_theme_mod( 'milky_way_logo' ) ); 
-					$alt = esc_attr( get_theme_mod( 'milky_way_alt' ) );
-					if ( $logo && $alt ) {
-						$logo_img = "<div class='logo'><img src='$logo' alt='$alt' /></div>";
+					$logo = has_custom_logo(); 
+					if ( $logo ) {
+						// if alt is bank, use theme alt.
+						$logo_img = "<div class='logo'>" . get_custom_logo() . "</div>";
 						$has_logo = 'has-logo';
 						$class .= ' ' . $has_logo;
 					}

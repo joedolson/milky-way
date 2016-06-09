@@ -1,7 +1,7 @@
 === Milky Way ===
 Contributors: joedolson
 Donate link: https://www.joedolson.com/donate/
-Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, dark, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
+Tags: accessibility-ready, translation-ready, two-columns, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 4.2
 Tested up to: 4.4
 Stable tag: 1.0.0
