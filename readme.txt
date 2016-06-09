@@ -31,6 +31,9 @@ Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
 = 1.0.1 =
 
 * Filter on default link color needs to filter when used, not just when compared.
+* Improve CSS to handle more input types
+* Add CSS to handle My Tickets short cart
+* Lowered contrast on placeholder to reduce confusion with actual content.
 
 = 1.0.0 =
 

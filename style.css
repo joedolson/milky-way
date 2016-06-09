@@ -585,16 +585,16 @@ input[type=url],
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #666;
+  color: #727272;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #666;
+  color: #727272;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #666;
+  color: #727272;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: #666;
+  color: #727272;
 }
 
 .post-content input[type='submit'] {
@@ -940,6 +940,32 @@ button .dashicons {
 	font-size: inherit;
 	line-height: inherit;
 }
+
+.mt-quick-cart {
+	padding: .5em;
+	text-align: right;
+}
+
+.mt-quick-cart span {
+	font-weight: 700;
+}
+
+.mt-quick-cart a {
+	display: inline-block;
+	padding: .25em;
+	background: #000;
+	outline: 1px outset #000;
+}
+
+.mt-quick-cart a:hover, .mt-quick-cart a:focus {
+	outline: 1px solid #333;
+	background: #111;
+}
+
+.mt-quick-cart .divider {
+	margin: 0 .5em;
+}
+
 
 /* Mobile first */
 /* Triggered when wider than 480px */
