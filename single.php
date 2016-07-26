@@ -6,7 +6,7 @@
 	<div <?php post_class(); ?>>
 		<?php
 			$format = get_post_format();
-			if ( false === $format) {
+			if ( false === $format ) {
 				$format = null;
 			}
 			get_template_part( 'partials/format', $format );
