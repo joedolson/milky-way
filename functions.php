@@ -33,7 +33,7 @@ if ( ! function_exists( 'milky_way_setup' ) ) {
 			$content_width = 640; 
 		}
 
-		load_theme_textdomain( 'milky-way', get_template_directory() . '/lang' );
+		load_theme_textdomain( 'milky-way' );
 
 		add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form' ) );
 		add_theme_support( 'post-thumbnails' );
