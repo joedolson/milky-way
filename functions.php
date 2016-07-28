@@ -83,7 +83,7 @@ add_action( 'widgets_init', 'milky_way_widgets_init' );
 if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 	function milky_way_widgets_init() {
 		register_sidebar( array(
-			'name'=>'Post Sidebar',
+			'name'=> __( 'Post Sidebar', 'milky-way' ),
 			'description' => __( 'Widgets in this region will appear on all posts and post archives', 'milky-way' ),
 			'id' => 'mw1',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -93,7 +93,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		));
 
 		register_sidebar( array(
-			'name'=>'Home Sidebar',
+			'name'=> __( 'Home Sidebar', 'milky-way' ),
 			'description' => __( 'Add up to 5 widgets to show on the bottom of your front page.', 'milky-way' ),
 			'id' => 'mw2',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -103,7 +103,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		));
 
 		register_sidebar( array(
-			'name'=>'Page Sidebar',
+			'name'=> __( 'Page Sidebar', 'milky-way' ),
 			'description' => __( 'Widgets in this region will appear on WordPress Pages.', 'milky-way' ),
 			'id' => 'mw3',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -113,7 +113,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		));
 
 		register_sidebar( array(
-			'name'=>'Global Sidebar - Top',
+			'name'=> __( 'Global Sidebar - Top', 'milky-way' ),
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'milky-way' ),
 			'id' => 'mw4',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -123,7 +123,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		));
 
 		register_sidebar( array(
-			'name'=>'Global Sidebar - Bottom',
+			'name'=> __( 'Global Sidebar - Bottom', 'milky-way' ),
 			'description' => __( 'These widgets appear globally on posts and pages, excluding the front page.', 'milky-way' ),
 			'id' => 'mw5',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -133,7 +133,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		));
 		
 		register_sidebar( array(
-			'name'=>'Front Page Content - Left',
+			'name'=> __( 'Front Page Content - Left', 'milky-way' ),
 			'description' => __( 'Left Column on front page', 'milky-way' ),
 			'id' => 'mw6',
 			'before_widget' => '<div id="%1$s" class="widget home-left %2$s"><div class="home-widget-inner">',
@@ -143,7 +143,7 @@ if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 		));	
 
 		register_sidebar( array(
-			'name'=>'Front Page Content - Right',
+			'name'=> __( 'Front Page Content - Right', 'milky-way' ),
 			'description' => __( 'Right Column on front page', 'milky-way' ),
 			'id' => 'mw7',
 			'before_widget' => '<div id="%1$s" class="widget home-right %2$s"><div class="home-widget-inner">',
