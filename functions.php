@@ -180,7 +180,7 @@ function milky_way_social_media_menu( $return ) {
 		$alignment = esc_attr( get_theme_mod( 'milky_way_sm_alignment' ) );
 		$alignment = ( $alignment == false || $alignment == '' ) ? 'center' : $alignment;
 		$class     = " align-$alignment";
-		$return = "<div class='social-networks$class' role='navigation' aria-label='Social Media'>";
+		$return = "<div class='social-networks$class' role='navigation' aria-label='" . esc_attr__( 'Social Media', 'milky-way' ) . "'>";
 		$return .= wp_nav_menu( array( 'theme_location'=>'social-networks', 'fallback_cb'=>'', 'echo'=>false, 'link_before'=>'<span class="screen-reader-text">', 'link_after'=>'</span>' ) );
 		$return .= "</div>";
 	}
