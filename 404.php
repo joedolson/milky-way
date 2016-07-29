@@ -10,7 +10,7 @@
 			<?php _e( 'Thanks for your patience!', 'milky-way' ); ?>
 			</p>
 			<p>
-			<?php bloginfo( 'author' ); ?>
+			<?php bloginfo( 'name' ); ?>
 			</p>			
 			<h2><?php _e( 'Browse the site map', 'milky-way' ); ?></h2>
 			<?php wp_nav_menu( array( 'theme_location'=>'site-map' ) ); ?>
