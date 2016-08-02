@@ -79,15 +79,6 @@ function milky_way_body_class( $classes ) {
 	return $classes;
 }
 
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-    function milky_way_render_title() {
-		?>
-		<title><?php wp_title( ' &raquo; ', true, 'right' ); ?></title>
-		<?php
-    }
-    add_action( 'wp_head', 'milky_way_render_title' );
-}
-
 add_action( 'widgets_init', 'milky_way_widgets_init' );
 if ( ! function_exists( 'milky_way_widgets_init' ) ) {
 	function milky_way_widgets_init() {
