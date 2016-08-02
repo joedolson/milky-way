@@ -20,10 +20,7 @@
 	<meta name="viewport" content="width=device-width" />		
 	<?php wp_head(); ?>
 </head>
-<?php
-	$class = ( !is_front_page() ) ? 'not-home' : '';
-?>
-<body <?php body_class( $class ); ?>>
+<body <?php body_class(); ?>>
 	<?php get_template_part( 'partials/skiplinks' ); ?>
 	<div id="wrapper" class='wrapper'>
 		<?php 

@@ -70,6 +70,15 @@ if ( ! function_exists( 'milky_way_setup' ) ) {
 	}
 }
 
+add_filter( 'body_class', 'milky_way_body_class', 10, 1 );
+function milky_way_body_class( $classes ) {
+	if ( !is_front_page() ) {
+		$classes[] = 'not-home';
+	}
+	
+	return $classes;
+}
+
 if ( ! function_exists( '_wp_render_title_tag' ) ) {
     function milky_way_render_title() {
 		?>
