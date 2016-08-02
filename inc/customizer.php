@@ -14,8 +14,8 @@
  /* .header, .sidebar, .content, .wrapper, .page-wrapper  */
 add_action( 'customize_register', 'milky_way_customize_register' );
 function milky_way_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport  = 'postMessage';
 	// Add Sections
 	$wp_customize->add_section( 'milky_way_colors' , array(
