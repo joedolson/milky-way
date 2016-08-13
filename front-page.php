@@ -6,7 +6,7 @@
 		 *	Add text to indicate page structure. Page structure helps non-sighted users navigate the page, 
 		 *	but also informs screen readers about how your information relates.
 		 */
-		milky_way_archive_title(); 
+		the_archive_title(); 
 	?>
 	<?php } ?>
     <?php while ( have_posts() ) : the_post(); ?>

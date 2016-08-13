@@ -2,7 +2,7 @@
 
     <?php if ( have_posts() ) : ?>
 	<?php if ( !is_singular() ) { 
-		milky_way_archive_title();
+		the_archive_title();
 	} ?>
     <?php while ( have_posts() ) : the_post(); ?>
 		<?php

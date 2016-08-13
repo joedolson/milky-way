@@ -341,38 +341,23 @@ function milky_way_enqueue_scripts() {
 	}
 }
 
-function milky_way_archive_title( $display = true ) {	
-	$hidden = '';
-	if ( is_archive() ) {
-		$title = post_type_archive_title( '', false );
-	}
-	if ( is_category() || is_tax() ) {
-		$title = single_term_title( '', false );
-	}
-	if ( is_tag() ) {
-		$title = ucfirst( trim( single_tag_title( '', false ) ) );
-	}
-	if ( is_date() ) {
-		$title = trim( single_month_title( ' ', false ) );
-	}
+add_filter( 'get_the_archive_title', 'milky_way_archive_title' );
+function milky_way_archive_title( $title ) {	
+	$hidden = apply_filters( 'milky_way_title_hidden', '' );
 	if ( is_home() ) {
 		if ( !is_front_page() ) {
 			$title = get_bloginfo( 'name' ) . ' / ' . get_the_title( get_option( 'page_for_posts' ) );			
 		} else {
 			$hidden = ' screen-reader-text';
 			$title = sprintf( __( '%s / Posts', 'milky-way' ), get_bloginfo( 'name' ) );
-		}
-	} else {
-		$title = sprintf( __( '%s / Posts', 'milky-way' ), $title );
+		}		
 	}
+	
 	if ( $title ) {
 		$title = "<div class='archive-title$hidden'><h1>" . $title . "</h1></div>";
 	}
-	if ( $display ) {
-		echo $title;
-	} else {
-		return $title;
-	}
+
+	return $title;
 }
 
 /* WooCommerce support */
