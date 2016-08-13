@@ -48,7 +48,7 @@ function milky_way_custom_excerpt_more( $output ) {
 }
 
 function milky_way_continue_reading( $id ) {
-    return '<a class="continue" href="'.get_permalink( $id ).'">'. sprintf( __( 'Finish Reading%s', 'milky-way' ), "<em> &ldquo;".get_the_title( $id )."&rdquo;</em> <span class='dashicon dashicons-arrow-right-alt2' aria-hidden='true'></span>" ) . '</a>';
+    return '<a class="continue" href="'. esc_url( get_permalink( $id ) ) .'">'. sprintf( __( 'Finish Reading%s', 'milky-way' ), "<em> &ldquo;".get_the_title( $id )."&rdquo;</em> <span class='dashicon dashicons-arrow-right-alt2' aria-hidden='true'></span>" ) . '</a>';
 }
 
 /*
@@ -187,7 +187,7 @@ function milky_way_breadcrumbs() {
 	$breadcrumbs[] = $crumb;
 	if ( is_category() || is_single() ) {
 		if ( is_attachment() ) {
-			$breadcrumbs[] = '<span class="breadcrumb parent"><a href="'.get_permalink( $post->post_parent ).'">'.get_the_title( $post->post_parent ).'</a></span>';
+			$breadcrumbs[] = '<span class="breadcrumb parent"><a href="'. esc_url( get_permalink( $post->post_parent ) ).'">'.get_the_title( $post->post_parent ).'</a></span>';
 		} else {
 			$breadcrumbs[] = '<span class="breadcrumb category">'.get_the_category_list( ', ' ).'</span>'; 
 		}
@@ -199,7 +199,7 @@ function milky_way_breadcrumbs() {
 			$parents = get_post_ancestors( $post->ID );
 			$title = get_the_title();
 			foreach ( $parents as $ancestor ) {
-				$breadcrumbs[] = '<span class="breadcrumb page-parent"><a href="'.get_permalink( $ancestor ).'">'.get_the_title( $ancestor ).'</a></span>';
+				$breadcrumbs[] = '<span class="breadcrumb page-parent"><a href="'. esc_url( get_permalink( $ancestor ) ) .'">'.get_the_title( $ancestor ).'</a></span>';
 			}
 		}
 		$breadcrumbs[] = "<span class=\"breadcrumb page-current\">".get_the_title()."</span>";
