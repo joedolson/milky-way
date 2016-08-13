@@ -15,7 +15,7 @@
 		 */
 		$post_link = ''; 
 		if ( get_the_title() == '' && !is_single() ) {
-			$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled quote</a>', 'milky-way' ), get_the_permalink() ) );
+			$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled quote</a>', 'milky-way' ), esc_url( get_the_permalink() ) ) );
 		}
 		if ( get_the_title() != '' ) {
 			if ( is_single() ) { ?>
