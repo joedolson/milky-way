@@ -34,15 +34,15 @@
 					<div class='home-widgets'>
 						<?php 
 						$customizer = add_query_arg( 'url', urlencode( home_url() ), admin_url( 'widgets.php' ) );
-						if ( !is_active_sidebar( 'ps6' ) ) { 
+						if ( !is_active_sidebar( 'mw6' ) ) { 
 							echo ( current_user_can( 'edit_theme_options' ) ) ? "<div class='widget home-left'><p class='get-started'><a href='" . esc_url( $customizer ) . "'>" . __( 'Add Widget Here', 'milky-way' ) . "</a></p></div>" : '';
 						} else {
-							dynamic_sidebar( 'Front Page Content - Left' );
+							dynamic_sidebar( 'mw6' );
 						}
-						if ( !is_active_sidebar('ps7') ) {
+						if ( !is_active_sidebar('mw7') ) {
 							echo ( current_user_can( 'edit_theme_options' ) ) ? "<div class='widget home-right'><p class='get-started'><a href='" . esc_url( $customizer ) . "'>" . __( 'Add Widget Here', 'milky-way' ) . "</a></p></div>" : '';
 						} else {
-							dynamic_sidebar('Front Page Content - Right');
+							dynamic_sidebar( 'mw7' );
 						}
 						?>
 					</div>

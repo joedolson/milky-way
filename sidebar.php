@@ -15,16 +15,16 @@
 		/* Home sidebar displayed only on home page. Global sidebars on all other pages. */
 		if ( is_front_page() ) {
 			?><div class='home-sidebar'><?php 
-			dynamic_sidebar('Home Sidebar'); 
+			dynamic_sidebar( 'mw2' ); 
 			?></div><?php
 		} else {
-			dynamic_sidebar( 'Global Sidebar - Top' ); 
+			dynamic_sidebar( 'mw4' ); 
 			if ( !is_page() ) { 
-				dynamic_sidebar( 'Post Sidebar' );
+				dynamic_sidebar( 'mw1' );
 			} else {
-				dynamic_sidebar( 'Page Sidebar' );
+				dynamic_sidebar( 'mw3' );
 			}
-			dynamic_sidebar( 'Global Sidebar - Bottom' );	
+			dynamic_sidebar( 'mw5' );	
 			
 		}
 	?>
