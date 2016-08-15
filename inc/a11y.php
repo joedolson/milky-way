@@ -167,11 +167,13 @@ function milky_way_insert_breadcrumbs() {
 		echo "<nav role='navigation' aria-label='" . __( "Breadcrumb navigation", 'milky-way' ) . "'>";
 		bcn_display( false, true, $reverse );
 		echo "</nav>";
+		return;
 	}
 	if ( function_exists( 'yoast_breadcrumb' ) ) {
 		echo "<nav role='navigation' aria-label='" . __( "Breadcrumb navigation", 'milky-way' ) . "'>";	
 		yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
 		echo "</nav>";
+		return;
 	}
 	
 	milky_way_breadcrumbs();
