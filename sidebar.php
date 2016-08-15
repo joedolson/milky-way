@@ -5,7 +5,7 @@
 	<h2 class="screen-reader-text" id="sidebar-header"><?php _e( 'Sidebar', 'milky-way' ); ?></h2>
 	<?php echo apply_filters( 'milky_way_top_of_sidebar', '' ); ?>
 	<?php if ( is_front_page() || is_page_template( 'page-full-width.php' ) ) {
-		$count = milky_way_get_widget_count( 'ps2' );
+		$count = milky_way_get_widget_count( 'mw2' );
 		$class = " widgets-$count";
 	} else {
 		$class = " widgets";
