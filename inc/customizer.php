@@ -142,8 +142,8 @@ function milky_way_customize_register( $wp_customize ) {
 			'settings' => 'milky_way_content_display',
 			'type'     => 'select',
 			'choices'  => array(
-				'full'    => 'Full Content',
-				'excerpt' => 'Excerpt',
+				'full'    => __( 'Full Content', 'milky-way' ),
+				'excerpt' => __( 'Excerpt', 'milky-way' ),
 			),
 		)
 	);	
@@ -157,9 +157,9 @@ function milky_way_customize_register( $wp_customize ) {
 			'settings' => 'milky_way_sm_alignment',
 			'type'     => 'select',
 			'choices'  => array(
-				'center'    => 'Center',
-				'left'      => 'Left',
-				'right'     => 'Right',
+				'center' => __( 'Center', 'milky-way' ),
+				'left'   => __( 'Left', 'milky-way' ),
+				'right'  => __( 'Right', 'milky-way' ),
 			),
 		)
 	);	
