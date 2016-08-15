@@ -14,7 +14,7 @@
 		 */
 		$post_link = ''; 
 		if ( get_the_title() == '' && !is_single() ) {
-			$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'milky-way' ), esc_url( get_the_permalink() ) ) );
+			$post_link = '<p class="milky-way-untitled"><a href="' .  get_the_permalink() . '" rel="bookmark">' . __( 'View untitled post', 'milky-way' ) . '</a></p>';
 		}
 		if ( get_the_title() != '' ) {
 			if ( is_single() ) { ?>

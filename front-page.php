@@ -20,7 +20,7 @@
 		<?php
 			$post_link = ''; 
 			if ( get_the_title() == '' ) {
-				$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled post</a>', 'milky-way' ), get_the_permalink() ) );
+				$post_link = '<p class="milky-way-untitled"><a href="' .  get_the_permalink() . '" rel="bookmark">' . __( 'View untitled post', 'milky-way' ) . '</a></p>';
 			} else {
 		?>
 		<?php 
