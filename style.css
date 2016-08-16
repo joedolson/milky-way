@@ -11,11 +11,6 @@ Tags: accessibility-ready, translation-ready, two-columns, custom-header, custom
 Text Domain: milky-way
 */
 
-/* Import Reset and Menu styles */
-@import url('css/reset.css');
-@import url('css/editor.css');
-@import url('css/menu.css');
-@import url('css/font.css');
 /* 
  * Menu for mobile 
  * Styles for menu don't apply below 800px; base styles.
