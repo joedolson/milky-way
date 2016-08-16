@@ -7,8 +7,8 @@
     <?php while ( have_posts() ) : the_post(); ?>
 		<?php
 			$format = get_post_format();
-			if ( $format === false ) {
-				$format = 'format';
+			if ( false === $format ) {
+				$format = null;
 			}
 			get_template_part( 'partials/format', $format );
 		?>	
