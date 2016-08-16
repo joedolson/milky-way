@@ -295,31 +295,6 @@ function milky_way_custom_header() {
 ";	
 }
 
-add_action( 'wp_head', 'milky_way_custom_background' );
-function milky_way_custom_background() {
-	$image = get_background_image();
-	$color = get_background_color();
-	if ( $color && $image ) {
-		?>
-<style type='text/css'>
-	body { background: <?php echo $color; ?> url(<?php echo $image; ?>) no-repeat stretch; }
-</style>
-	<?php
-	} else if ( $image ) {
-		?>
-<style type='text/css'>
-	body { background: url(<?php echo $image; ?>) no-repeat stretch: }
-</style>
-	<?php		
-	} else if ( $color ) {
-		?>
-<style type='text/css'>
-	body { background-color: <?php echo $color; ?>; }
-</style>
-	<?php		
-	}
-}
-
 add_action( 'wp_enqueue_scripts','milky_way_enqueue_scripts' );
 function milky_way_enqueue_scripts() {
 	wp_enqueue_script( 'milkyWay.a11y', get_template_directory_uri() . '/js/a11y.js', array('jquery'), '1.0.0', true );
