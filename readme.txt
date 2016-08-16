@@ -1,5 +1,5 @@
 === Milky Way ===
-Contributors: joedolson
+Contributors: joedolson, rabmalin
 Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, two-columns, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 4.2
