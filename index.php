@@ -12,8 +12,16 @@
 			}
 			get_template_part( 'partials/format', $format );
 		?>	
-		<div class="comments">
-			<?php wp_link_pages(); ?>
+		<div class="link-pages">
+			<?php
+				$args = array( 
+							'before'=>'<p class="paginated">',
+							'next_or_number' => 'next',
+							'nextpagelink' => __( 'Next Page', 'milky-way' ) . '<span class="dashicon nextpage" aria-hidden="true"></span>',
+							'previouspagelink' => '<span class="dashicon prevpage" aria-hidden="true"></span>' . __( 'Previous Page', 'milky-way' )
+						);
+				wp_link_pages( $args );
+			?>
 		</div>
 		<?php
 		/* Only render trackback_rdf when appropriate and allowed */
