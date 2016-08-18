@@ -3,8 +3,8 @@ Contributors: joedolson, rabmalin
 Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, two-columns, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 4.2
-Tested up to: 4.4
-Stable tag: 1.0.0
+Tested up to: 4.6
+Stable tag: 1.0.1
 License: GPLv2 or later
 
 Milky Way: Ready for accessibility, responsive, and waiting for your content. 
@@ -34,6 +34,16 @@ Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
 * Improve CSS to handle more input types
 * Add CSS to handle My Tickets short cart
 * Lowered contrast on placeholder to reduce confusion with actual content.
+* the_archive_title()
+* Translatable fixes
+* Missing URL escaping
+* Typo in theme URI
+* Switch theme CSS to enqueue
+* wp_link_pages should not be wrapped inside comments_open
+* Remove unnecessary custom background functionality
+* Formats could call invalid value
+* Removed source image of header as unnecessary
+* Sidebar IDs
 
 = 1.0.0 =
 
