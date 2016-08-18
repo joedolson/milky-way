@@ -25,7 +25,7 @@
 		?>
     <?php endwhile; ?>
 	<div class="prev_next">
-		<?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Posts','milky-way' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Posts %s','milky-way' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
+		<?php the_post_navigation(); ?>
 	</div>
 	<?php comments_template(); ?>
 
