@@ -11,19 +11,17 @@
 			}
 			get_template_part( 'partials/format', $format );
 		?>
-		<?php if ( comments_open() ) { ?>
-			<div class="comments">
-				<?php
-					$args = array(
-								'before'=>'<p class="paginated">',
-								'next_or_number' => 'next',
-								'nextpagelink' => 'Next Page<span class="dashicon nextpage" aria-hidden="true"></span>',
-								'previouspagelink' => '<span class="dashicon prevpage" aria-hidden="true"></span>Previous Page'
-							);
-					wp_link_pages( $args );
-				?>
-			</div>
-		<?php } ?>
+		<div class="link-pages">
+			<?php
+				$args = array( 
+							'before'=>'<p class="paginated">',
+							'next_or_number' => 'next',
+							'nextpagelink' => __( 'Next Page', 'milky-way' ) . '<span class="dashicon nextpage" aria-hidden="true"></span>',
+							'previouspagelink' => '<span class="dashicon prevpage" aria-hidden="true"></span>' . __( 'Previous Page', 'milky-way' )
+						);
+				wp_link_pages( $args );
+			?>
+		</div>
 
 		<div class="prev_next">
 			<?php posts_nav_link( ' <span aria-hidden="true">&bull;</span> ', sprintf( __( '%s Previous Post','milky-way' ), '<span aria-hidden="true">&larr;</span>' ), sprintf( __( 'Next Post %s','milky-way' ), '<span aria-hidden="true">&rarr;</span>' ) ); ?>
