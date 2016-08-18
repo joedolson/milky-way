@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="prev_next">
-			<?php the_post_navigation(); ?>
+			<?php the_posts_navigation(); ?>
 		</div>
 	</div>
     <?php endwhile; ?>

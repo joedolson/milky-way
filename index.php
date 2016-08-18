@@ -33,7 +33,7 @@
 		?>
     <?php endwhile; ?>
 	<div class="prev_next">
-		<?php the_post_navigation(); ?>
+		<?php the_posts_navigation(); ?>
 	</div>
 	<?php comments_template(); ?>
 
