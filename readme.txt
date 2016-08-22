@@ -4,7 +4,7 @@ Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, two-columns, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 4.2
 Tested up to: 4.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 
 Milky Way: Ready for accessibility, responsive, and waiting for your content. 
@@ -26,6 +26,11 @@ Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 1.0.2 =
+
+* Changed license link for clarification
+* Removed HTML from some translatable strings
 
 = 1.0.1 =
 
