@@ -30,7 +30,7 @@
 			if ( milky_way_show_excerpt() ) { 
 				the_excerpt();
 			} else {
-				the_content( sprintf( __( 'Finish reading &ldquo;<em>%s</em>&rdquo;', 'milky-way' ), get_the_title() ) );
+				the_content( sprintf( __( 'Finish reading %s', 'milky-way' ), '&ldquo;<em>' . get_the_title() . '</em>&rdquo;' ) );
 			}	
 			?>
 			<?php echo $post_link; ?>

@@ -15,7 +15,7 @@
 		 */
 		$post_link = ''; 
 		if ( get_the_title() == '' && !is_single() ) {
-			$post_link = wpautop( sprintf( __( '<a href="%s" rel="bookmark">View untitled aside</a>', 'milky-way' ), esc_url( get_the_permalink() ) ) );
+			$post_link = wpautop( '<a href="%s" rel="bookmark">' . __( 'View untitled aside', 'milky-way' ) . esc_url( get_the_permalink() ) . '</a>' );
 		}
 		if ( get_the_title() != '' ) {
 			if ( is_single() ) { ?>
@@ -29,7 +29,7 @@
 			if ( milky_way_show_excerpt() ) { 
 				the_excerpt();
 			} else {
-				the_content( sprintf( __( 'Finish reading &ldquo;<em>%s</em>&rdquo;', 'milky-way' ), get_the_title() ) ); 
+				the_content( sprintf( __( 'Finish reading %s', 'milky-way' ), '&ldquo;<em>' . get_the_title() . '</em>&rdquo;' ) ); 
 			}	
 			?>
 			<?php echo $post_link; ?>

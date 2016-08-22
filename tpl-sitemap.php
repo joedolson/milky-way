@@ -14,7 +14,7 @@ get_header();
 		<h1 class="page-title" id="title-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 
 		<div <?php post_class( 'post-content' ); ?> id="post-<?php the_ID(); ?>">
-		<?php the_content( sprintf( __( 'Finish reading <em>%s</em>', 'milky-way' ), get_the_title() ) ); ?>
+		<?php the_content( sprintf( __( 'Finish reading %s', 'milky-way' ), '&ldquo;<em>' . get_the_title() . '</em>&rdquo;' ) ); ?>
 		<h2><?php _e( 'Site Map', 'milky-way' ); ?></h2>
 		<?php wp_nav_menu( array( 'theme_location'=>'site-map' ) ); ?>
 		</div> 
