@@ -15,8 +15,7 @@ Milky Way is a flexible theme, appropriate for use as a blog or organization web
 
 == Licensing: ==
 
-Header image: NASA, Public Domain (http://imgsrc.hubblesite.org/hu/db/images/hs-2005-01-a-full_jpg.jpg; http://hubblesite.org/about_us/copyright.php)
-Screenshot photo: Personal photo. I hereby declare it GPL. Cheers.
+Header image: NASA, Public Domain (http://hubblesite.org/gallery/album/heritage/pr2005001a/npp/all/titles/true/; http://hubblesite.org/about_us/copyright.php)
 Font: Google Fonts (http://www.google.com/fonts/specimen/Domine) [SIL Open Font License, 1.1]
 Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
  
