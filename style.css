@@ -1017,45 +1017,45 @@ button .dashicons {
 		width: 66.666666%;
 		float: right;
 	}	
-	.page-template-page-sidebar-right-php .content {
+	.page-template-tpl-sidebar-right-php .content {
 		float: left;
 	}
-	.home.page .content, .page-template-page-full-width-php .content {
+	.home.page .content, .page-template-tpl-full-width-php .content {
 		width: 100%;
 		float: none;
 	}
 	.sidebar {
 		width: 33.333333%;
 	}
-	.page-template-page-sidebar-right-php .sidebar {
+	.page-template-tpl-sidebar-right-php .sidebar {
 		float: right;
 	}
 	.sidebar .post-wrapper {
 		padding-right: 2em;
 	}
-	.home.page .sidebar, .page-template-page-full-width-php .sidebar {
+	.home.page .sidebar, .page-template-tpl-full-width-php .sidebar {
 		width: 100%;
 	}
-	.home.page .sidebar .post-wrapper, .page-template-page-full-width-php .sidebar .post-wrapper {
+	.home.page .sidebar .post-wrapper, .page-template-tpl-full-width-php .sidebar .post-wrapper {
 		padding-right: 1em;
 	}
-	.home.page .sidebar .widget, .page-template-page-full-width-php .sidebar .widget {
+	.home.page .sidebar .widget, .page-template-tpl-full-width-php .sidebar .widget {
 		float: left;
 		vertical-align: top;
 	}
-	.home.page .sidebar .widgets-3 .widget, .page-template-page-full-width-php .sidebar .widgets-3 .widget {
+	.home.page .sidebar .widgets-3 .widget, .page-template-tpl-full-width-php .sidebar .widgets-3 .widget {
 		width: 33.333333%;
 	}
-	.home.page .sidebar .widgets-2 .widget, .page-template-page-full-width-php .sidebar .widgets-2 .widget {
+	.home.page .sidebar .widgets-2 .widget, .page-template-tpl-full-width-php .sidebar .widgets-2 .widget {
 		width: 50%;
 	}	
-	.home.page .sidebar .widgets-4 .widget, .page-template-page-full-width-php .sidebar .widgets-4 .widget {
+	.home.page .sidebar .widgets-4 .widget, .page-template-tpl-full-width-php .sidebar .widgets-4 .widget {
 		width: 25%;
 	}
-	.home.page .sidebar .widgets-5 .widget, .page-template-page-full-width-php .sidebar .widgets-5 .widget {
+	.home.page .sidebar .widgets-5 .widget, .page-template-tpl-full-width-php .sidebar .widgets-5 .widget {
 		width: 20%;
 	}
-	.home.page .sidebar .widget > h2, .page-template-page-full-width-php .sidebar .widget > h2 {
+	.home.page .sidebar .widget > h2, .page-template-tpl-full-width-php .sidebar .widget > h2 {
 		text-align: center;
 		background: rgba( 240, 240, 240, .95 );
 	}
