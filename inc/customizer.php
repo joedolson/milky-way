@@ -27,12 +27,7 @@ function milky_way_customize_register( $wp_customize ) {
 		'title' => __( 'Milky Way Settings', 'milky-way' ),
 		'priority' => 202,
 		'description' => __( 'Additional content & display options.', 'milky-way' ),
-	) );	
-	$wp_customize->add_section( 'milky_way_logo' , array(
-		'title' => __( 'Milky Way Logo', 'milky-way' ),
-		'priority' => 200,
-		'description' => __( 'Add your logo', 'milky-way' ),
-	) );	
+	) );		
 	//Add Settings
 	$wp_customize->add_setting( 'milky_way_header_bg', array( 
 		'default' => '#222222',
