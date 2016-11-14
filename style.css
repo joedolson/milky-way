@@ -1,7 +1,7 @@
 /*
 Theme Name: Milky Way
 Theme URI: http://themes.joedolson.com/milkyway/
-Version: 1.0.3
+Version: 1.0.4
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com
 Description: Milky Way is a flexible theme, appropriate for use as a blog or organization web site, or extensible via filters in a plug-in or extended through a child theme. Rich in simple settings to customize colors and characteristics, but unopinionated, so you can easily modify styles without needing to resort to unnecessary specificity in your CSS. Milky Way has great accessibility, so you can trust that the theme has done everything it can to ensure your site is accessible to people with disabilities.
@@ -883,6 +883,11 @@ label[for=comment], label[for=email], label[for=author], label[for=url] { displa
 
 .nav-next {
 	float: right;
+}
+
+.gallery-icon a:focus, .gallery-icon a:hover {
+	background: #888;
+	outline: 1px solid #555;
 }
 
 /* Utility Classes */
