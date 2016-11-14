@@ -179,6 +179,7 @@ function milky_way_home_title( $title ) {
 	if ( ( is_front_page() || is_home() ) && empty( $title ) ) {
 		return __( 'Home', 'milky-way' ). ' &raquo; '.get_bloginfo( 'name' );
 	} 
+	
 	return $title;
 }
 

@@ -2,9 +2,9 @@
 Contributors: joedolson, rabmalin
 Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, two-columns, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
-Requires at least: 4.4
-Tested up to: 4.6
-Stable tag: 1.0.3
+Requires at least: 4.5
+Tested up to: 4.7
+Stable tag: 1.0.4
 License: GPLv2 or later
 
 Milky Way: Ready for accessibility, responsive, and waiting for your content. 
@@ -26,6 +26,13 @@ Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 1.0.4 =
+
+* Fixed broken style due to template name changes
+* Translation escaping
+* Removed unused milky_way_logo setting
+* Improved hover/focus on linked gallery images
 
 = 1.0.3 =
 
