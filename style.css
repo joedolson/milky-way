@@ -16,7 +16,7 @@ Text Domain: milky-way
  * Styles for menu don't apply below 800px; base styles.
  */
 .primary-menu > ul {
-	margin: 1em 2em;	
+	margin: 1em 2em;
 }
 
 .primary-menu li {
