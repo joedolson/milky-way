@@ -1,8 +1,22 @@
 <?php
 /**
- * Univeresal functions and definitions
+ * Milky Way functions and definitions
  * @package Milky Way
  */
+ 
+require 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$theme_update_checker = PucFactory::buildUpdateChecker(
+	'https://github.com/joedolson/milky-way/',
+	__FILE__,
+	'milky-way'
+);
+
+// Set the branch that contains the stable release.
+$theme_update_checker->setBranch( 'master' );
+
+ 
 add_action( 'after_setup_theme', 'milky_way_setup' );
 if ( ! function_exists( 'milky_way_setup' ) ) {
 	/**
